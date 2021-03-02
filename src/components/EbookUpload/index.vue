@@ -1,12 +1,27 @@
 <template>
   <div class="upload-container">
-    <el-upload>请上传</el-upload>
+    <el-upload :action="action"
+               :headers="headers">请上传
+    </el-upload>
   </div>
 </template>
 
 <script>
+import { getToken } from '@/utils/auth'
+
 export default {
-  name: 'index'
+  computed: {
+    headers() {
+      return {
+        Authorization: `Bearer ${getToken()}`
+      }
+    }
+  },
+  data() {
+    return {
+      action: `${process.env.VUE_APP_BASE_API}/book/upload`
+    }
+  }
 }
 </script>
 
