@@ -9,6 +9,7 @@
         <Warning/>
         <el-col :span="24">
           <!-- 表单控件的具体样式 -->
+          <EbookUpload></EbookUpload>
         </el-col>
       </el-row>
     </div>
@@ -17,12 +18,14 @@
 
 <script>
 import Sticky from '@/components/Sticky'
+import EbookUpload from '@/components/EbookUpload'
 import Warning from './Warning'
 
 export default {
   components: {
     Sticky,
-    Warning
+    Warning,
+    EbookUpload
   },
   data() {
     return {
